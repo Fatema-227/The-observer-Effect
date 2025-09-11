@@ -27,7 +27,6 @@
 ### imge 4
 ![](./imge/4.png)
 
-![physic]
 
 
 ### Future Updates
