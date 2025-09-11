@@ -1,0 +1,51 @@
+cardSymbols=['','',]
+cards=[]
+flippedCard=[]
+matchedPairs=0
+attempts=0
+gameActive=true
+
+function initializeGame():
+
+    gameCards = cardSymbols + cardSymbols
+
+
+    shuffledCards = shuffleArray(gameCards)
+
+    clearGameBoard()
+
+
+    for each card in shuffledCards:
+        cardElement = createCardElement(card)
+        add cardElement to game board
+        add click event listener to cardElement
+
+    flippedCards = []
+    matchedPairs = 0
+    attempts = 0
+    gameActive = true
+    updateGameInfo()
+
+
+
+    function showCard(card):
+    card.textContent = card.dataset.symbol
+    add 'flipped' class to card
+
+    function hideCards(card1, card2):
+    card1.textContent = '?'
+    card2.textContent = '?'
+    remove 'flipped' class from card1
+    remove 'flipped
+
+
+1. Initialize game with shuffled cards
+2. Player clicks on first card → reveals symbol
+3. Player clicks on second card → reveals symbol
+4. If symbols match → cards stay visible
+5. If symbols don't match → cards flip back
+6. Repeat until all pairs are found
+7. Display victory message with performance stats
+
+
+// I will write allthings later..
