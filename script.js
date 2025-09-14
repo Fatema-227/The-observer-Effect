@@ -35,7 +35,7 @@ function startGame() {
 }
 
 //قلب البطاقات
-function handleCardClick(cards) {
+const handleCardClick(cards) {
   if (!gameActive) return
   if (cards.classList.contains("flippedCard") || flippedCard.length === 2)
     return
@@ -50,14 +50,14 @@ function handleCardClick(cards) {
   }
 }
 //End the game:
-function endGame() {
+const endGame() {
   clearInterval(gameTimer)
   setTimeout(() => {
     alert(`Game Over! You found ${matchedPairs} pairs in ${attempts} attempts!`)
   }, 500)
   gameActive = false
   //return the game :
-  function resetGame() {
+const resetGame() {
     if (observationTimer) {
       clearInterval(observationTimer)
     }
