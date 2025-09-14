@@ -28,14 +28,15 @@ function startGame() {
   createCards(cards)
   revealAllCards()
   gameActive = false
-  matched = []
+  matchedPairs = 0
   attempts = 0
   updateUI()
+  startObservationPeriod()
 }
 
 //قلب البطاقات
 function handleCardClick(cards) {
-  if (!gameStarted) return
+  if (!gameActive) return
   if (cards.classList.contains("flippedCard") || flippedCard.length === 2)
     return
 
@@ -47,4 +48,25 @@ function handleCardClick(cards) {
     updateUI()
     setTimeout(checkMatch, 600)
   }
+}
+//End the game:
+function endGame() {
+  clearInterval(gameTimer)
+  setTimeout(() => {
+    alert(`Game Over! You found ${matchedPairs} pairs in ${attempts} attempts!`)
+  }, 500)
+  gameActive = false
+  //return the game :
+  function resetGame() {
+    if (observationTimer) {
+      clearInterval(observationTimer)
+    }
+    const timerDisplay = document.querySelector(".observation-timer")
+    if (timerDisplay) {
+      timerDisplay.remove()
+    }
+    remainingObservationTime = 30
+    startGame()
+  }
+  document.getElementById("restartBtn").addEventListener("click", resetGame)
 }

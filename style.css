@@ -1,3 +1,16 @@
 body {
   background-color: rgb(248, 205, 212);
 }
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.dark-mode .card {
+  background-color: #2d2d2d;
+}
+
+.dark-mode .card .front {
+  background-color: #3a3a3a;
+}
