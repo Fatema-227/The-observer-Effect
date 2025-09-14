@@ -11,18 +11,18 @@ let gameActive = false
 
 //Download card data from a file:
 fetch("./data/cards.json")
-  .then((response) => response.json())
-  .then((data) => {
-    cardData = data
-    startGame()
+.then((response) => response.json())
+.then((data) => {
+cardData = data
+startGame()
   })
 
 //start Game:
 const startGame() {
   const pairedCards = []
   cardData.forEach((cards) => {
-    pairedCards.push({ ...cards })
-    pairedCards.push({ ...cards })
+  pairedCards.push({ ...cards })
+  pairedCards.push({ ...cards })
   })
   cards = shuffle(pairedCards)
   createCards(cards)
