@@ -18,7 +18,7 @@ fetch("./data/cards.json")
   })
 
 //start Game:
-function startGame() {
+const startGame() {
   const pairedCards = []
   cardData.forEach((cards) => {
     pairedCards.push({ ...cards })
@@ -35,7 +35,7 @@ function startGame() {
 }
 
 //قلب البطاقات
-const handleCardClick(cards) {
+const handleCardClick=>(cards) {
   if (!gameActive) return
   if (cards.classList.contains("flippedCard") || flippedCard.length === 2)
     return
