@@ -1,0 +1,26 @@
+[
+  {
+    "imge": "../imge/5.png",
+    "name": "Timer"
+  },
+  {
+    "imge": "../imge/6.png",
+    "name": "Notebook"
+  },
+  {
+    "imge": "../imge/7.png",
+    "name": "Flashlight"
+  },
+  {
+    "imge": "../imge/8.png",
+    "name": "Camera"
+  },
+  {
+    "imge": "../imge/9.png",
+    "name": "Compass"
+  },
+  {
+    "imge": "../imge/10.png",
+    "name": "Magnifying glass"
+  }
+]
