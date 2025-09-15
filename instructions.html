@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Observer Effect - Instructions</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <button class="theme-toggle" onclick="toggleDarkMode()">🌙</button>
@@ -40,7 +44,6 @@
     </div>
 
     <script>
-      // Toggle dark mode
       const toggleDarkMode = () => {
         document.body.classList.toggle("dark-mode")
         const themeToggle = document.querySelector(".theme-toggle")
@@ -48,14 +51,12 @@
           ? "☀️"
           : "🌙"
 
-        // Save preference in localStorage
         localStorage.setItem(
           "darkMode",
           document.body.classList.contains("dark-mode")
         )
       }
 
-      // Load user preferences when page loads
       document.addEventListener("DOMContentLoaded", function () {
         if (localStorage.getItem("darkMode") === "true") {
           document.body.classList.add("dark-mode")

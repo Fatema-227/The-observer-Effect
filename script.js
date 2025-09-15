@@ -1,13 +1,11 @@
 // Card data
 const cardData = [
-  { symbol: "🌟" },
-  { symbol: "🚀" },
-  { symbol: "🐱" },
-  { symbol: "🐶" },
-  { symbol: "🍎" },
-  { symbol: "🍕" },
-  { symbol: "⚽" },
-  { symbol: "🎸" },
+  { symbol: "📷" },
+  { symbol: "⏱️" },
+  { symbol: "📝" },
+  { symbol: "🧭" },
+  { symbol: "🔍" },
+  { symbol: "🔦" },
 ]
 
 let cards = []
@@ -53,7 +51,7 @@ const shuffle = (array) => {
   return array
 }
 
-// Create cards
+/// Create cards
 const createCards = (cards) => {
   const gameBoard = document.getElementById("gameBoard")
   gameBoard.innerHTML = ""
@@ -69,8 +67,6 @@ const createCards = (cards) => {
     gameBoard.appendChild(cardElement)
   })
 }
-
-// Reveal all cards
 const revealAllCards = () => {
   document.querySelectorAll(".card").forEach((card) => {
     card.classList.add("flipped")
