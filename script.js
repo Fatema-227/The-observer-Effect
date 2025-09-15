@@ -1,5 +1,15 @@
 console.log("JS working!")
 
+let cardData = []
+let cards = []
+let flippedCards = []
+let matchedPairs = 0
+let attempts = 0
+let observationTimer = null
+let remainingObservationTime = 30
+let gameActive = false
+
+//show pages
 const showPage = (pageId) => {
   document.querySelectorAll(".page").forEach((page) => {
     page.classList.remove("active")
@@ -11,23 +21,18 @@ const showPage = (pageId) => {
   }
 }
 
+//Toggle dark mode
 const toggleDarkMode = () => {
   document.body.classList.toggle("dark-mode")
   const themeToggle = document.querySelector(".theme-toggle")
   themeToggle.textContent = document.body.classList.contains("dark-mode")
     ? "☀️"
     : "🌙"
+  localStorage.setItem(
+    "darkMode",
+    document.body.classList.contains("dark-mode")
+  )
 }
-
-let cardData = []
-let cards = []
-let flippedCards = []
-let matchedPairs = 0
-let attempts = 0
-let observationTimer = null
-let remainingObservationTime = 30
-let gameActive = false
-
 // Start Game
 const startGame = () => {
   if (cardData.length === 0) {
@@ -77,9 +82,9 @@ const createCards = (cards) => {
     const cardElement = document.createElement("div")
     cardElement.className = "card"
     cardElement.innerHTML = `
-      <div class="front">${card.symbol}</div>
-      <div class="back">${index + 1}</div>
-    `
+                    <div class="front">${card.symbol}</div>
+                    <div class="back">${index + 1}</div>
+                `
     cardElement.dataset.symbol = card.symbol
     cardElement.addEventListener("click", () => handleCardClick(cardElement))
     gameBoard.appendChild(cardElement)
@@ -173,4 +178,10 @@ const resetGame = () => {
   startGame()
 }
 
-document.getElementById("restartBtn").addEventListener("click", resetGame)
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("restartBtn").addEventListener("click", resetGame)
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode")
+    document.querySelector(".theme-toggle").textContent = "☀️"
+  }
+})
