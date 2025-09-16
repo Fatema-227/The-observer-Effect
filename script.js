@@ -172,4 +172,20 @@ document.addEventListener("DOMContentLoaded", function () {
   if (restartBtn) {
     restartBtn.addEventListener("click", resetGame)
   }
+  const sound = document.getElementById("game-sound")
+  const soundBtn = document.getElementById("soundToggleBtn")
+  let soundOn = false
+
+  soundBtn.addEventListener("click", () => {
+    if (soundOn) {
+      sound.pause()
+      soundBtn.textContent = "Sound off"
+      soundBtn.setAttribute("aria-pressed", "false")
+    } else {
+      sound.play()
+      soundBtn.textContent = "Sound on"
+      soundBtn.setAttribute("aria-pressed", "true")
+    }
+    soundOn = !soundOn
+  })
 })
