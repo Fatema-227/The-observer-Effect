@@ -60,7 +60,7 @@ const createCards = (cards) => {
     cardElement.className = "card"
     cardElement.innerHTML = `
             <div class="front">${card.symbol}</div>
-            <div class="back"><img src="img/card-back.png" alt="Card Back" /></div>
+            <div class="back"></div>
         `
     cardElement.dataset.symbol = card.symbol
     cardElement.addEventListener("click", () => handleCardClick(cardElement))
