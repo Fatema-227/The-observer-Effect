@@ -13,7 +13,7 @@ let flippedCards = []
 let matchedPairs = 0
 let attempts = 0
 let observationTimer = null
-let remainingObservationTime = 30
+let remainingObservationTime = 15
 let gameActive = false
 
 // Start the game
@@ -35,7 +35,7 @@ const setupGame = () => {
   gameActive = false
   matchedPairs = 0
   attempts = 0
-  remainingObservationTime = 30
+  remainingObservationTime = 15
   flippedCards = []
   document.querySelector(".observation-mode").style.display = "block"
   updateUI()
