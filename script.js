@@ -1,11 +1,11 @@
 // Card data
 const cardData = [
-  { symbol: "📷" },
-  { symbol: "⏱️" },
-  { symbol: "📝" },
-  { symbol: "🧭" },
-  { symbol: "🔍" },
-  { symbol: "🔦" },
+  { scr: "./imge/5.png", alt: "Timer" },
+  { scr: "./imge/6.png", alt: "Notebook" },
+  { scr: "./imge/7.png", alt: "Flashlight" },
+  { scr: "./imge/8.png", alt: "Camera" },
+  { scr: "./imge/10.png", alt: "Magnifying glass" },
+  { scr: "./imge/9.png", alt: "Compass" },
 ]
 
 let cards = []
@@ -59,9 +59,12 @@ const createCards = (cards) => {
     const cardElement = document.createElement("div")
     cardElement.className = "card"
     cardElement.innerHTML = `
-            <div class="front">${card.symbol}</div>
-            <div class="back"></div>
-        `
+  <div class="front">
+    <img src="${card.scr}" alt="${card.alt}" />
+  </div>
+  <div class="back"></div>
+`
+
     cardElement.dataset.symbol = card.symbol
     cardElement.addEventListener("click", () => handleCardClick(cardElement))
     gameBoard.appendChild(cardElement)
