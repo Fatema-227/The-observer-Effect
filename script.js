@@ -60,13 +60,14 @@ const createCards = (cards) => {
     cardElement.className = "card"
     cardElement.innerHTML = `
             <div class="front">${card.symbol}</div>
-            <div class="back">${index + 1}</div>
+            <div class="back"><img src="img/card-back.png" alt="Card Back" /></div>
         `
     cardElement.dataset.symbol = card.symbol
     cardElement.addEventListener("click", () => handleCardClick(cardElement))
     gameBoard.appendChild(cardElement)
   })
 }
+
 const revealAllCards = () => {
   document.querySelectorAll(".card").forEach((card) => {
     card.classList.add("flipped")
