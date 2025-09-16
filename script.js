@@ -1,11 +1,11 @@
 // Card data
 const cardData = [
-  { scr: "./imge/5.png", alt: "Timer" },
-  { scr: "./imge/6.png", alt: "Notebook" },
-  { scr: "./imge/7.png", alt: "Flashlight" },
-  { scr: "./imge/8.png", alt: "Camera" },
-  { scr: "./imge/10.png", alt: "Magnifying glass" },
-  { scr: "./imge/9.png", alt: "Compass" },
+  { src: "./imge/5.png", alt: "Timer" },
+  { src: "./imge/6.png", alt: "Notebook" },
+  { src: "./imge/7.png", alt: "Flashlight" },
+  { src: "./imge/8.png", alt: "Camera" },
+  { src: "./imge/10.png", alt: "Magnifying glass" },
+  { src: "./imge/9.png", alt: "Compass" },
 ]
 
 let cards = []
@@ -60,12 +60,12 @@ const createCards = (cards) => {
     cardElement.className = "card"
     cardElement.innerHTML = `
   <div class="front">
-    <img src="${card.scr}" alt="${card.alt}" />
+    <img src="${card.src}" alt="${card.alt}" />
   </div>
   <div class="back"></div>
 `
 
-    cardElement.dataset.symbol = card.symbol
+    cardElement.dataset.symbol = card.alt
     cardElement.addEventListener("click", () => handleCardClick(cardElement))
     gameBoard.appendChild(cardElement)
   })
@@ -143,6 +143,7 @@ const checkMatch = () => {
       card2.classList.remove("flipped")
     }, 1000)
   }
+
   flippedCards = []
 }
 

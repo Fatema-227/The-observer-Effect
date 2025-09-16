@@ -33,30 +33,37 @@
 }
 
 body {
-  background-image: url("imge/11.png");
-  background-size: 150px;
-  background-repeat: repeat;
-  background-position: top left;
+  background-image: url("imge/17.png");
+  background-repeat: no-repeat;
+  background-position: center center;
   background-attachment: fixed;
+  background-size: cover;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   color: var(--text-dark);
   transition: var(--transition);
+  height: 100vh;
 }
 
 .container {
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
   box-shadow: var(--shadow);
-  padding: 30px;
-  width: 100%;
-  max-width: 800px;
+  padding: 20px;
   text-align: center;
-  transition: var(--transition);
   backdrop-filter: blur(5px);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .dark-mode .container {
@@ -226,8 +233,8 @@ p {
 }
 
 .card {
-  width: 150px;
-  height: 200px;
+  width: 120px;
+  height: 160px;
   position: relative;
   perspective: 1000px;
 }
@@ -348,11 +355,39 @@ p {
   }
 }
 
-@media (max-width: 600px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 480px) {
+  .container {
+    max-width: 95vw;
+    max-height: 95vh;
+    padding: 20px;
   }
+  .card {
+    width: 90px;
+    height: 130px;
+  }
+}
 
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 25px;
+  }
+  .card {
+    width: 100px;
+    height: 140px;
+  }
+  @media (min-width: 769px) {
+    .container {
+      max-width: 800px;
+      max-height: 90vh;
+      padding: 30px;
+    }
+    .card {
+      width: 120px;
+      height: 160px;
+    }
+  }
   .game-header {
     flex-direction: column;
     gap: 15px;
