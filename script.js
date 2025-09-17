@@ -56,7 +56,7 @@ const createCards = (cards) => {
     cardElement.className = "card"
     cardElement.innerHTML = `
 <div class="front">
-<img src="${card.src}" alt="${card.alt}" />
+<img src="${card.src}" alt="${card.alt}"/>
 </div>
 <div class="back"></div>`
 
