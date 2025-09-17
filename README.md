@@ -15,7 +15,7 @@ A creative journey into the world of game development! This repository documents
 
 ### Getting Started
 Open the game by visiting the following URL in your web browser:
-[]
+[play it here](https://memorycard123.surge.sh/)
 
 * Click on the cards to flip them and find matching pairs.
 * Try to complete the game in the shortest time possible.
