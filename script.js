@@ -21,13 +21,9 @@ const startGame = () => {
   setupGame()
 }
 
-// Setup the game
+//
 const setupGame = () => {
-  const pairedCards = []
-  cardData.forEach((card) => {
-    pairedCards.push({ ...card })
-    pairedCards.push({ ...card })
-  })
+  const pairedCards = cardData.flatMap((card) => [{ ...card }, { ...card }])
 
   cards = shuffle(pairedCards)
   createCards(cards)
@@ -59,11 +55,10 @@ const createCards = (cards) => {
     const cardElement = document.createElement("div")
     cardElement.className = "card"
     cardElement.innerHTML = `
-  <div class="front">
-    <img src="${card.src}" alt="${card.alt}" />
-  </div>
-  <div class="back"></div>
-`
+<div class="front">
+<img src="${card.src}" alt="${card.alt}" />
+</div>
+<div class="back"></div>`
 
     cardElement.dataset.symbol = card.alt
     cardElement.addEventListener("click", () => handleCardClick(cardElement))
@@ -151,7 +146,7 @@ const checkMatch = () => {
 const endGame = () => {
   setTimeout(() => {
     alert(
-      `🎉 Game Over! You found ${matchedPairs} pairs in ${attempts} attempts!`
+      ` Game Over! You found ${matchedPairs} pairs in ${attempts} attempts!🎉`
     )
   }, 500)
   gameActive = false
@@ -162,7 +157,7 @@ const resetGame = () => {
   if (observationTimer) {
     clearInterval(observationTimer)
   }
-  remainingObservationTime = 30
+  remainingObservationTime = 15
   startGame()
 }
 

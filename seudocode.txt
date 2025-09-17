@@ -1,51 +1,31 @@
-cardSymbols=['','',]
-cards=[]
-flippedCard=[]
-matchedPairs=0
-attempts=0
-gameActive=true
+1. Start the game:
+   - Duplicate card symbols (for pairs)
+   - Shuffle the array
+   - Generate card elements and display them
 
-function initializeGame():
+2. Show all cards for 15 seconds:
+   - Flip all cards face-up
+   - Start observation countdown
 
-    gameCards = cardSymbols + cardSymbols
+3. After 15 seconds:
+   - Flip all cards face-down
+   - Enable game interaction
 
+4. On card click:
+   - If less than 2 cards are flipped:
+     - Flip the card and add it to flippedCards array
 
-    shuffledCards = shuffleArray(gameCards)
+5. When two cards are flipped:
+   - Increase attempts counter
+   - Check if symbols match
+     - If yes:
+       - Keep both cards flipped
+       - Increase matchedPairs
+     - If not:
+       - Flip both cards back after short delay
 
-    clearGameBoard()
+6. Repeat until all pairs are matched
 
-
-    for each card in shuffledCards:
-        cardElement = createCardElement(card)
-        add cardElement to game board
-        add click event listener to cardElement
-
-    flippedCards = []
-    matchedPairs = 0
-    attempts = 0
-    gameActive = true
-    updateGameInfo()
-
-
-
-    function showCard(card):
-    card.textContent = card.dataset.symbol
-    add 'flipped' class to card
-
-    function hideCards(card1, card2):
-    card1.textContent = '?'
-    card2.textContent = '?'
-    remove 'flipped' class from card1
-    remove 'flipped
-
-
-1. Initialize game with shuffled cards
-2. Player clicks on first card → reveals symbol
-3. Player clicks on second card → reveals symbol
-4. If symbols match → cards stay visible
-5. If symbols don't match → cards flip back
-6. Repeat until all pairs are found
-7. Display victory message with performance stats
-
-
-// I will write allthings later..
+7. End game:
+   - Show message with performance (attempts, time, pairs)
+   - Option to restart the game
